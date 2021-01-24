@@ -1,35 +1,3 @@
-<?php
-$db = new PDO("mysql:host=localhost;dbname:apprenants", "root","");
-$allusers = $db->query('SELECT * FROM liste ORDER BY id DESC');
-if (isset($_GET['recherche']) && !empty($_GET['recherche'])){
- $recherche = htmlspecialchars ($_GET['search']);
- $allusers = $db->query('SELECT nom FROM liste WHERE nom like"% '.$recherche.'%" ORDER BY id DESC');
- 
-}
-
-
-?>
-
-<section>
-<?php
-if($allusers-> rowCount() > 0){
-  while($user * $allusers->fetch()){
-    ?>
-    <p>
-      <?= $user['nom']; ?>
-    </p>
-    <?php
-  }
-} else {
-  ?>
-  <p>oups!!!!</p>
-  <?php
-}
-
-?>
-</section>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -46,7 +14,7 @@ if($allusers-> rowCount() > 0){
 	<div>
 		<header>
 				<nav class="navbar navbar-expand-lg navbar-light bg-white ">
-				<a class="navbar-brand simplon " href="#"><img src="../img/Ssimplon png.png" alt="" height="100px" width="100px"></a>
+				<a class="navbar-brand simplon " href="index.php"><img src="../img/Ssimplon png.png" alt="" height="100px" width="100px"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				  <span class="navbar-toggler-icon"></span>
 				</button>
@@ -61,206 +29,73 @@ if($allusers-> rowCount() > 0){
 						  <a class="nav-link ecart1 font-weight-bold text-danger" href="../pages/enregister.php">S'ENREGISTRER</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link ecart2 font-weight-bold text-danger" href="../pages/liste.php">LISTE</a>
+							<a class="nav-link ecart2 font-weight-bold text-danger" href="../pages/recherche.php">RECHERCHER</a>
 						  </li>
 					  </ul>
 				 </div>
-				  <form class="form-inline my-2 my-lg-0" action="liste.php" method="GET">
-					<input class="form-control mr-sm-2 ipad" type="search" placeholder="Search" aria-label="Recherche" id="Recherche" name="recherche" >
-					<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Recherche</button>
+
 				  </form>
 				</div>
         </nav> 
         
 		</header>
 
+
+
 		<div class="container-fluid fond">
 			<div class="container">
                 <div class="row">
-                    <div class="col-md-12 text-center mt-5 text-uppercase font-weight-bold text-white">
+                    <div class="col-md-12 text-center mt-5 text-uppercase font-weight-bold text-danger">
                         <h1>Liste des Apprénants</h1>
                     </div>
                 </div>
-                <!--ici on place la liste-->
-                <div class="container">
-                  <table class="table table-fixed">
-                    <thead>
-                      <tr>
-                        <th class="col-xs-2">First Name</th>
-                        <th class="col-xs-2">Last Name</th>
-                        <th class="col-xs-2">E-mail</th>
-                        <th class="col-xs-2">First Name</th>
-                        <th class="col-xs-2">Last Name</th>
-                        <th class="col-xs-2">E-mail</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                      <tr>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                        <td class="col-xs-2">John</td>
-                        <td class="col-xs-2">Doe</td>
-                        <td class="col-xs-2">johndoe@email.com</td>
-                      </tr>
-                    </tbody>
-                  </table>
+
+
+                <?php
+    $bd = new PDO("mysql:host=localhost;dbname=apprenants","root", "");
+    $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $result = $bd->query("SELECT * FROM liste ORDER BY NOM ASC");
+
+    if (!$result){
+        echo"la recuperation a echoue";
+    }else{
+        $nbre = $result->rowCount();
+        ?>
+
+        <h4 class="text-center text-uppercase text-danger">La table comprend <?= $nbre ?> personnes enregistrées</h4>
+       <table class="m-auto">
+       <tr class="border bg-white">
+            <th class="text-center text-uppercase">nom</th>
+            <th class="text-center text-uppercase">prenom &nbsp;</th>
+            <th class="text-center text-uppercase">naissance</th>
+            <th class="text-center text-uppercase">adresse</th>
+            <th class="text-center text-uppercase">telephone</th>
+            <th class="text-center text-uppercase">email</th>
+        </tr>
+
+        <?php
+    while($ligne = $result->fetch()){
+      
+        echo"<tr>";
+        echo"<td>".$ligne["NOM"]."</td>";
+        echo"<td>".$ligne["PRENOM"]."</td>";
+        echo"<td>".$ligne["NAISSANCE"]."</td>";
+        echo"<td>".$ligne["ADRESSE"]."</td>";
+        echo"<td>".$ligne["TELEPHONE"]."</td>";
+        echo"<td>".$ligne["EMAIL"]."</td>";
+        echo"</tr>";
+    }
+?>
+       </table>
+       <?php  
+    }
+?>
                 </div>
             </div>
-		</div>
+    </div>
+    
+
             
 
 		<footer>

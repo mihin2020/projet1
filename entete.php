@@ -8,19 +8,19 @@
 				 <div class="">
 					<ul class="navbar-nav">
 						<li class="nav-item ">
-							<a class="nav-link mr-5 font-weight-bold text-danger" href="../index.php">ACCEUIL</a>
+							<a class="nav-link mr-5 font-weight-bold text-danger" href="index.php">ACCEUIL</a>
 						  </li>
 						<li class="nav-item ">
-						  <a class="nav-link ecart1 font-weight-bold text-danger" href="../simplon/pages/enregister.php">S'ENREGISTRER</a>
+						  <a class="nav-link ecart1 font-weight-bold text-danger" href="/simplon/pages/enregister.php">S'ENREGISTRER</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link ecart2 font-weight-bold text-danger" href="../simplon/pages/liste.php">LISTE</a>
+							<a class="nav-link ecart2 font-weight-bold text-danger" href="/simplon/pages/liste.php">LISTE</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link ecart2 font-weight-bold text-danger" href="/simplon/pages/recherche.php">RECHERCHE</a>
 						  </li>
 					  </ul>
 				 </div>
-				  <form class="form-inline my-2 my-lg-0" action="">
-					<input class="form-control mr-sm-2 ipad" type="text" placeholder="Search" aria-label="Recherche" id="Recherche"  onchange="ouvrirPage()">
-					<button class="btn btn-outline-danger my-2 my-sm-0" type="submit" onclick="ouvrirPage()">Recherche</button>
-				  </form>
+				  
 				</div>
 			  </nav>

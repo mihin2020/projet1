@@ -3,7 +3,7 @@
     $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $requete = "SELECT * FROM liste ORDER BY NOM ASC";
-    $result = $bd->query("SELECT NOM, PRENOM FROM liste ORDER BY EMAIL ASC");
+    $result = $bd->query("SELECT NOM  FROM liste ");
 
     if (!$result){
         echo"la recuperation a echoue";
@@ -15,13 +15,12 @@
        <table>
        <tr>
 
-            <th>email</th>
             <th>nom</th>
             <th>prenom</th>
             <th>date</th>
-            
             <th>adresse</th>
             <th>telephone</th>
+            <th>email</th>
             
            
         </tr>
@@ -38,7 +37,7 @@
 ?>
        </table>
        <?php
-        $result->closeCurser();
+        
     }
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-white ">

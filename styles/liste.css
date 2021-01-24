@@ -14,8 +14,11 @@
   }
   .fond
   {
-    height: 1200px;
-    background-color: #d41010;
+    height: 600px;
+    background-color: #e2dede;
+  }
+  .table{
+    border: 1px;
   }
   .fond1
   {

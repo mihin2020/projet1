@@ -29,12 +29,15 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link ecart2 font-weight-bold text-danger" href="../pages/liste.php">LISTE</a>
-                      </li>
+					  </li>
+					  <li class="nav-item ">
+                      <a class="nav-link ecart1 font-weight-bold text-danger" href="../pages/recherche.php">RECHERCHER</a>
+                    </li>
                   </ul>
              </div>
-              <form class="form-inline my-2 my-lg-0" action="test.php" method="post">
+             <!-- <form class="form-inline my-2 my-lg-0" action="liste.php" method="post">
                 <input class="form-control mr-sm-2" type="recherche" placeholder="Search" aria-label="Recherche">
-                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Recherche</button>
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Recherche</button>-->
               </form>
             </div>
           </nav>
@@ -56,8 +59,8 @@
 					</div>
 				</div>
 				<form action="traitement.php" method="post">
-					<input class="text mt-4" type="text" name="NOM" placeholder="NOM" required="">
-					<input class="text mt-4" type="text" name="PRENOM" placeholder="PRÉNOMS" required="">
+					<input class="text mt-4" type="text" name="NOM" placeholder="NOM" pattern="[a-zA-Z]{1,}" required="">
+					<input class="text mt-4" type="text" name="PRENOM" placeholder="PRÉNOMS" pattern="[a-zA-Z]{1,}" required="">
 					<input class="text mt-4" type="date" name="NAISSANCE" placeholder="DATE DE NAISSANCE" required="">
 					<input class="text mt-4" type="text" name="ADRESSE" placeholder="ADRESSE" required="">
 					<input class="text mt-4" type="text" name="TELEPHONE" placeholder="TELEPHONE" required="">
@@ -75,16 +78,7 @@
 		</div>
 		<!-- //copyright -->
 		<ul class="colorlib-bubbles">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
+		   
 		</ul>
     </div>
     
