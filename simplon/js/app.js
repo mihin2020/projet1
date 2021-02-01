@@ -1,7 +1,7 @@
 function ouvrirPage () {
     var a = document.getElementById("Recherche").value;
     if(a=="liste"){
-        window.open("../simplon/pages/liste.html");
+        window.open("/simplon/pages/liste.php");
     }
     if(a=="ADRESSE"|| a=="adr"){
         window.open("../Hallo docteur/pages/contact.html");

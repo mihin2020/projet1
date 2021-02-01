@@ -63,7 +63,7 @@
 					<input class="text mt-4" type="text" name="PRENOM" placeholder="PRÉNOMS" pattern="[a-zA-Z]{1,}" required="">
 					<input class="text mt-4" type="date" name="NAISSANCE" placeholder="DATE DE NAISSANCE" required="">
 					<input class="text mt-4" type="text" name="ADRESSE" placeholder="ADRESSE" required="">
-					<input class="text mt-4" type="text" name="TELEPHONE" placeholder="TELEPHONE" required="">
+					<input class="text mt-4" type="text" name="TELEPHONE" placeholder="TELEPHONE" pattern="[0-9]{1,}" required="">
 					<input class="text email" type="email" name="EMAIL" placeholder="Email" required="">
 				
 					
